@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Paste - Pastebin</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Paste Content</h1>
+
+        <div class="paste-content">
+            {% for p in paste %}
+                <div class="paste-entry">
+                    <h2>Paste ID: {{ p.id }}</h2>
+                    <p><strong>Content:</strong> {{ p.content }}</p>
+                    <p><strong>Owner ID:</strong> {{ p.owner_id }}</p>
+                    <hr>
+                </div>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <script src="{{ url_for('.static', filename='script.js') }}"></script>
+</body>
+</html>
